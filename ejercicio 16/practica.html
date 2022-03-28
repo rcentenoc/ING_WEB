@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller de JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./icons/icons8-batman-viejo-500.png">
+    <link rel="stylesheet" href="./css/practice.css">
+</head>
+<body>Ronald Fabricio Centeno Cárdenas
+    
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#332b64" fill-opacity="0.2" d="M0,96L60,133.3C120,171,240,245,360,261.3C480,277,600,235,720,186.7C840,139,960,85,1080,74.7C1200,64,1320,96,1380,112L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+        </svg>
+        <header>
+            <h1>Figuras Geométricas</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere asperiores, soluta vero maxime excepturi sunt odit eius in sed atque ab, debitis nostrum voluptatum consequuntur adipisci rerum exercitationem illo nesciunt.
+            </p>
+        </header>
+        <section>
+            <div class="particularContainer">
+                <!-- CUADRADO -->
+                <div>
+                    <form class="formularioCuadrado" action="formularioCuadrado">
+                        <div class="preguntas">
+                            <h2>Calcula el área y el perimetro de un cuadrado</h2>
+                            <label for="inputLadoCuadrado" class="label">Escribe cuanto mide el lado del cuadrado</label>
+                            <input type="number" id="inputLadoCuadrado" placeholder="Ingresa el dato aquí" class="input">
+                            <h2>Respuesta:</h2>
+                            <div class="resultadoCuadrado"></div>
+                        </div>
+                        <!-- BOTONES -->
+                        <div class="botones">
+                            <button type="button" class="primaryButton perimetroButton" onclick="calcularPerimetroCuadrado()">
+                                <span class="shadow"></span>
+                                <span class="edge"></span>
+                                <span class="front">Calcular el perimetro</span>
+                            </button>
+                            <button type="button" class="primaryButton areaButton" onclick="calcularAreaCuadrado()">
+                                <span class="shadow"></span>
+                                <span class="edge"></span>
+                                <span class="front">Calcular el área</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </section>
+    
+    <script src="./js/practice.js"></script>
+</body>
+</html>

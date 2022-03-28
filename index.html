@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./ejercicio15.css">
+</head>
+<body>
+    <section class="slider">
+        <div class="exercise">
+            <img src="./img/ejercio15.png" alt="">
+        </div>
+        <div class="container">
+            <div class="item">
+                <img src="http://www.mediaforma.com/eformation/exercice15/slider1.jpg" class="photo" alt="">
+            </div>
+            <div class="item">
+                <img src="http://www.mediaforma.com/eformation/exercice15/slider2.jpg" class="photo" alt="">
+            </div>
+            <div class="item">
+                <img src="http://www.mediaforma.com/eformation/exercice15/slider3.jpg" class="photo" alt="">
+            </div>
+            <div class="item">
+                <img src="http://www.mediaforma.com/eformation/exercice15/slider4.jpg" class="photo" alt="">
+            </div>
+            <div class="item">
+                <img src="http://www.mediaforma.com/eformation/exercice15/slider5.jpg" class="photo" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="ajax">
+        <h2 class="tittle">Ejercicio 16</h2>
+        <div class="exercise">
+            <img src="./img/ejercio16.png" alt="">
+        </div>
+        <article id="corps">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio modi, labore debitis rerum inventore eligendi ab facilis aspernatur iste excepturi, at veniam omnis nemo earum repellat eius deleniti sunt aperiam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et natus iure architecto voluptatum maiores iste explicabo iusto fugit ad molestiae pariatur minus laudantium, dolore a cum, corrupti quod, sequi vitae!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et alias odio distinctio quidem harum? Quae, ipsum asperiores possimus eaque ad alias exercitationem corporis? Nesciunt numquam veniam eligendi, eveniet ullam molestias!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dolor quod inventore culpa optio incidunt, provident tempora id illo odit, nemo asperiores pariatur veritatis excepturi. Natus sunt dolorem aut blanditiis.
+            <span id="cac40"></span>
+                <script>
+                    $(function(){
+                        function afficheCac40(){
+                            $('#cac40').load('./itCac40.php');
+                        }
+                        setInterval(afficheCac40,1000);
+                    });
+                </script>
+        </article>
+        <!-- <div>
+            <button type="button" id="actual" class="primaryButton" onclick="calcularDescuentoFinal()">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">Calcular el precio final</span>
+            </button>
+            <div id="zone" class="parrafo"></div>
+
+            <script>
+               $(function(){
+                $('#actual').on('click', function(){
+                    $('#zone').load('index.html)';
+                });
+               });
+            </script>
+        </div>  -->
+    </section>
+</body>
+</html>
