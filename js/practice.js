@@ -53,5 +53,5 @@ function calcularAreaCuadrado () {
     const result = document.querySelector(".resultadoCuadrado");
     const value = parseInt(input.value);
     let area = areaCuadrado(value);
-    result.innerHTML= 'El perimetro del cuadrado es de: '+area+' cm.';
+    result.innerHTML= 'El area del cuadrado es de: '+area+' cm.';
 }
