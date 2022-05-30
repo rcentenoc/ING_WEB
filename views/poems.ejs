@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <div class="navegadorContainer">
+        <h3>BARRA DE NAVEGACIÓN</h3>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <li>
+                    <a href="/poems">Poemas</a>
+                </li>
+            </ul>
+        </nav>
+        <h4>TIME: </h4><%= new Date() %>
+    </div>
+</head>
+<body>
+    <h1><%= message %></h1>
+    <div class="poemasContainer">
+        <pre>
+            <% for(var i = 0 ; i<poems.length ; i++){ %>
+                <li>
+                    <%= poems[i].title %>
+                    <%= poems[i].autor %>
+                    <%= poems[i].poema %>
+                </li>
+            <%}%>
+        </pre>
+    </div>
+    <h2>INGRESA UN NEUVO POEMA</h2>
+    <div class="nuevoPoemaContainer">
+        <form action="/new-poem" method="POST">
+            <label for="title">Titulo</label>
+            <input type="text" name="title" id="title">
+            <label for="autor">Autor</label>
+            <input type="text" name="autor" id="autor">
+            <label for="poema">Poema</label>
+            <textarea name="poema" id="poema" cols="30" rows="10"></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    <script>
+        const txtNewPoem = document.getElementById('newPoem');
+        txtNewPoem.focus();
+    </script>
+</body>
+</html>
