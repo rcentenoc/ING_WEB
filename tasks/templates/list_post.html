@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJANCGO CRUD</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class=" row">
+            <div class="col-md-4 offset-md-4">
+                <h1 class="text-center fw-bold">POSTS</h1>
+
+                <form action="{% url 'create_post' %}" method="POST" class="card card-body bg-secondary mb-3">
+                    {% csrf_token %}
+                    <label for="title" >TITULO:</label>
+                    <input type="text" name="title" placeholder="Escribe un título para tu post" class="form-control mb-3" required>
+                    <label for="description" >CONTENIDO:</label>
+                    <textarea name="description" rows="10" placeholder="Escribe un contenido para tu post" class="form-control mb-2" required></textarea>
+                    <button class="btn btn-primary">GUARDAR</button>
+                </form>
+                
+                {% for task in tasks %}
+                <div class="card text-black mt-2">
+                    <div class="card-header">
+                      {{task.empty}}
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{ task.title }}</h5>
+                      <p class="card-text">{{task.description}}</p>
+                      <div class="d-flex flex-row-reverse">
+                        <form action="{% url 'delete_post' task.id %}" method="POST" class="m-1">
+                            {% csrf_token %}
+                            <button class="btn btn-danger btn-sm">BORRAR</button>
+                        </form>
+                        <form action="{% url 'edit_post' task.id %}" method="POST" class="m-1">
+                            {% csrf_token %}
+                            <button class="btn btn-success btn-sm">EDITAR</button>
+                        </form>
+                    </div>
+                    </div>
+                  </div>
+<!--                 
+                
+                <div class="card card-body text-black mt-2 d-flex flex-row justify-content-between">
+                    <div>
+                        <h4>{{ task.title }}</h4>
+                        <p>{{task.description}}</p>
+                    </div>
+                    <div class="d-flex flex-column justify-content-lg-start">
+                        <form action="{% url 'delete_post' task.id %}" method="POST" class="mt-2 align-self-center">
+                            {% csrf_token %}
+                            <button class="btn btn-danger btn-sm">BORRAR</button>
+                        </form>
+                        <form action="{% url 'edit_post' task.id %}" method="POST" class="mt-2 align-self-center">
+                            {% csrf_token %}
+                            <button class="btn btn-success btn-sm">EDITAR</button>
+                        </form>
+                    </div>
+                </div> -->
+                {% empty %}   
+                    <h1 class="display-4 text-center">No existen posts aún</h1>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
